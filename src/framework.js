@@ -1,6 +1,6 @@
-window.framework = {
-  mountApp(rootEl, App, router) {
-    rootEl.appendChild(new App);
+export const DOM = {
+  mountApp(rootEl, component) {
+    rootEl.appendChild(component);
     /* if (router) {
       router.navigateTo(window.location.pathname);
     } */
@@ -12,7 +12,7 @@ window.framework = {
   }
 }
 
-window.router = {
+export const ROUTER = {
   createRouter(routes) {
     function navigateTo(path) {
       let routerEl = document.querySelector('#router');
@@ -27,6 +27,24 @@ window.router = {
 
     return {
       navigateTo
+    }
+  },
+
+  LinkComp: class extends HTMLElement {
+    connectedCallback() {
+      let path = this.getAttribute('to');
+      let shadow = this.attachShadow({mode: 'open'});
+
+      // Template.
+      shadow.innerHTML = `
+        <a href="${path}"><slot></slot></a>
+      `
+
+      // Event listeners.
+      /* this.addEventListener('click', e => {
+        e.preventDefault();
+        history.pushState({}, '', path);
+      }) */
     }
   }
 }

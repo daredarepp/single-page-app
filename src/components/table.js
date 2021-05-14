@@ -6,6 +6,11 @@
  */
  export function table({list, sortColumn, sortOrder}) {
   let columns = Object.keys(list[0]);
+  let renderStars = (num) => {
+    let stars = Array(num).fill('<i class="star fas fa-star"></i>').join('');
+    stars = stars || '<i class="star fas fa-star-half-alt"></i>';
+    return stars;
+  }
 
   return `
     <div class="js-table-wrapper table-wrapper">
@@ -24,7 +29,7 @@
         ${list.map(item =>  `
           <tr>
             ${columns.map(column => `
-              <td>${item[column]}</td>
+              <td>${column === 'rating' ? renderStars(item[column]) : item[column]}</td>
             `).join('')}
           </tr>
         `).join('')}

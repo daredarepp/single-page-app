@@ -84,10 +84,6 @@ tr:nth-child(odd):not(:first-child) {
   background-color: #fafafa;
 }
 
-tr:not(:first-child) {
-  /* border-top: 1px solid rgba(0,0,0,.1); */
-}
-
 tr:not(:first-child):hover {
   background-color: rgba(0, 0, 0, 0.04);
 }
@@ -112,7 +108,7 @@ th:nth-child(3) {
   width: 15rem;
 }
 th:last-child {
-  width: 8rem;
+  width: 9rem;
 }
 
 /* Table cells */
@@ -162,6 +158,11 @@ th[data-order='desc']::after {
 
 td {
   padding: 1.4rem;
+}
+
+td .star {
+  font-size: 0.8rem;
+  color: orange;
 }
 
 

@@ -6,9 +6,14 @@ import { menu } from './menu';
  * @param {{}} props Dynamic data used to render the app.
  * @returns {string} html code representing the app.
  */
- export function app(props) {
+ export function app({menuList, hasRouting}) {
   return `
-    ${menu({menu: props.menu})}
-    ${props.hasRouting ? `<div class="js-router"></div>` : ``}
+    ${menu({menuList})}
+
+    <main>
+      <div class="container">
+        ${hasRouting ? `<div class="js-router"></div>` : ``}
+      </div>
+    </main>
   `
 }

@@ -4,17 +4,20 @@
  * @param {{}} props Dynamic data used to render the menu.
  * @returns {string} html code representing the menu.
  */
- export function menu(props) {
+ export function menu({menuList}) {
   return `
-    <ul>
-      <li>
-        <a href="/" data-internal="true">Home</a>
-      </li>
-      ${props.menu.map(item => `
-        <li>
-          <a href="/${item.url}" data-internal="true" data-title="${item.name}">${item.name}</a>
-        </li>
-      `).join('')}
-    </ul>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="/" data-internal="true" class="logo">👊 SPA</a>
+
+          <div class="menu">
+            ${menuList.map(item => `
+                <a href="/${item.url}" data-internal="true" data-title="${item.name}" class="menu__link">${item.name}</a>
+            `).join('')}
+          </div>
+        </nav>
+      </container>
+    </header>
   `;
 }

@@ -4,21 +4,26 @@
  * @param {{}} props Dynamic data used to render the products table.
  * @returns {string} html code represeting the products table.
  */
- export function productsTable(props) {
-  let columns = Object.keys(props.products[0]);
+ export function table({list, sortColumn, sortOrder}) {
+  let columns = Object.keys(list[0]);
 
   return `
     <table>
       <tr>
         ${columns.map(column => `
-          <th>${column}</th>
+          <th
+            data-order="${column === sortColumn ? sortOrder : ''}"
+            data-column="${column}"
+          >
+            ${column}
+          </th>
         `).join('')}
       </tr>
 
-      ${props.products.map(product =>  `
+      ${list.map(item =>  `
         <tr>
           ${columns.map(column => `
-            <td>${product[column]}</td>
+            <td>${item[column]}</td>
           `).join('')}
         </tr>
       `).join('')}

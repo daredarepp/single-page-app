@@ -1,4 +1,4 @@
-import { productsTable } from './productsTable';
+import { table } from './table';
 
 /**
  * Creates html code representing the products page.
@@ -6,9 +6,9 @@ import { productsTable } from './productsTable';
  * @param {{}} props Dynamic data used to render the page.
  * @returns {string} html code representing the page.
  */
- export function pageProducts(props) {
+ export function pageProducts({products}) {
   return `
     <h1>Products</h1>
-    ${productsTable({products: props.products})}
+    ${table({list: products})}
   `
 }

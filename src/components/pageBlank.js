@@ -1,3 +1,5 @@
+import { hero } from './hero';
+
 /**
  * Creates html code representing a blank page.
  * 
@@ -6,6 +8,10 @@
  */
  export function pageBlank() {
   return `
-    <h1>${document.title}</h1>
+    ${hero({title: document.title})}
+
+    <div class="container">
+      <h2>${document.title}</h2>
+    </div>
   `
 }

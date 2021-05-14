@@ -11,9 +11,7 @@ import { menu } from './menu';
     ${menu({menuList})}
 
     <main>
-      <div class="container">
-        ${hasRouting ? `<div class="js-router"></div>` : ``}
-      </div>
+      ${hasRouting ? `<div class="js-router"></div>` : ``}
     </main>
   `
 }

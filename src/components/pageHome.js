@@ -1,3 +1,5 @@
+import { hero } from './hero';
+
 /**
  * Creates html code representing the home page.
  * 
@@ -6,6 +8,10 @@
  */
  export function pageHome() {
   return `
-    <h1>Home</h1>
+    ${hero({title: 'Home'})}
+    
+    <div class="container">
+      <h2>Home</h2>
+    </div>
   `
 }

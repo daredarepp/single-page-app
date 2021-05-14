@@ -9,7 +9,7 @@
     <header>
       <div class="container">
         <nav>
-          <a href="/" data-internal="true" class="logo">👊 SPA</a>
+          <a href="/" data-internal="true" class="logo">SPA</a>
 
           <div class="menu">
             ${menuList.map(item => `

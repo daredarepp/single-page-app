@@ -8,25 +8,27 @@
   let columns = Object.keys(list[0]);
 
   return `
-    <table>
-      <tr>
-        ${columns.map(column => `
-          <th
-            data-order="${column === sortColumn ? sortOrder : ''}"
-            data-column="${column}"
-          >
-            ${column}
-          </th>
-        `).join('')}
-      </tr>
-
-      ${list.map(item =>  `
+    <div class="js-table-wrapper table-wrapper">
+      <table>
         <tr>
           ${columns.map(column => `
-            <td>${item[column]}</td>
+            <th
+              data-order="${column === sortColumn ? sortOrder : ''}"
+              data-column="${column}"
+            >
+              ${column}
+            </th>
           `).join('')}
         </tr>
-      `).join('')}
-    </table>
+
+        ${list.map(item =>  `
+          <tr>
+            ${columns.map(column => `
+              <td>${item[column]}</td>
+            `).join('')}
+          </tr>
+        `).join('')}
+      </table>
+    </div>
   `;
 }

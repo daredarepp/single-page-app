@@ -29,7 +29,7 @@ window.addEventListener('load', async () => {
         let sortedProducts = newOrder ? sortTable(data.products, column, newOrder) : data.products;
 
         // Replace old with new table.
-        let oldTable = e.target.closest('table');
+        let oldTable = e.target.closest('.js-table-wrapper');
         let temp = document.createElement('div');
         temp.innerHTML = table({list: sortedProducts, sortColumn: column, sortOrder: newOrder});
         let newTable = temp.firstElementChild;

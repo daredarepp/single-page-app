@@ -1,4 +1,5 @@
 import { table } from './table';
+import { hero } from './hero';
 
 /**
  * Creates html code representing the products page.
@@ -8,7 +9,10 @@ import { table } from './table';
  */
  export function pageProducts({products}) {
   return `
-    <h1>Products</h1>
-    ${table({list: products})}
+    ${hero({title: 'Products'})}
+
+    <div class="container">
+      ${table({list: products})}
+    </div>
   `
 }

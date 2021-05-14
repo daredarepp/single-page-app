@@ -15,6 +15,9 @@ export class Router {
     history[navMethod]({path, title}, title, path);
     document.title = title;
     document.querySelector('.js-router').innerHTML = route.component(route.props);
+    document.querySelectorAll('.js-menu-link').forEach(el => {
+      el.classList.toggle('active', el.getAttribute('href') === path);
+    })
   }
 
   // All event listeners related to routing are added here.

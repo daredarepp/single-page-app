@@ -215,6 +215,10 @@ td {
   color: white;
 }
 
+.menu__link.active {
+  color: var(--color-primary-lighter);
+}
+
 .container {
   max-width: 80rem;
   margin: 0 auto;

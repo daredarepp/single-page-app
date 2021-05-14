@@ -13,7 +13,7 @@
 
           <div class="menu">
             ${menuList.map(item => `
-                <a href="/${item.url}" data-internal="true" data-title="${item.name}" class="menu__link">${item.name}</a>
+                <a href="/${item.url}" data-internal="true" data-title="${item.name}" class="js-menu-link menu__link">${item.name}</a>
             `).join('')}
           </div>
         </nav>

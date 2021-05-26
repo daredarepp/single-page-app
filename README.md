@@ -22,12 +22,12 @@ A single page application written in  vanilla js, css, html.
 
     ```sh
     $ npm run build
-    # Builds the app and listens for changes.
+    # Builds the app.
     ```
 
-2. Serve
+3. Develop
 
     ```sh
-    $ npm run serve
-    # Serves the app and reloads the browser on changes.
+    $ npm run dev
+    # Builds & serves the app, reloading the browser on changes.
     ```

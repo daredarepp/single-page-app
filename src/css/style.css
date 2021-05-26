@@ -1,3 +1,7 @@
+@import 'normalize.css';
+@import 'fa/fontawesome.min.css';
+@import 'fa/solid.min.css';
+
 *,
 *::before,
 *::after {

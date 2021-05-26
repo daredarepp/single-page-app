@@ -12,6 +12,12 @@ import { table } from './components/table';
 import { fetchAndParseJSON } from './utils';
 import { sortTable } from './utils';
 
+// Style
+import '../css/style.css';
+
+// JSON
+import dataUrl from '../json/data.json';
+
 window.addEventListener('load', async () => {
   /**
    * All UI events that are not connected to the router are specified here.
@@ -39,7 +45,6 @@ window.addEventListener('load', async () => {
   }
   
   let appContainerEl = document.querySelector('#app');
-  let dataUrl = '/static/json/data.json';
   let data = await fetchAndParseJSON(dataUrl);
 
   // Error fetching data

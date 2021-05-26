@@ -18,6 +18,9 @@ import '../css/style.css';
 // JSON
 import dataUrl from '../json/data.json';
 
+// Library
+import library from './library';
+
 window.addEventListener('load', async () => {
   /**
    * All UI events that are not connected to the router are specified here.

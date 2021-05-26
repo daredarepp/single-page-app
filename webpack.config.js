@@ -13,6 +13,24 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js|jsx)$/i,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              plugins: [
+                [
+                  "@babel/plugin-transform-react-jsx",
+                  {
+                    pragma: 'library.createElement'
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+      },
+      {
         test: /\.json$/i,
         type: 'asset/resource',
       },
@@ -33,6 +51,5 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    clean: true
   },
 }
